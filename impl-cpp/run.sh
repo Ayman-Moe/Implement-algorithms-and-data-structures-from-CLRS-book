@@ -1,9 +1,9 @@
-
-rm -rf cmake-build-debug
-  cmake -S . -B cmake-build-debug -G Ninja
-  cmake --build cmake-build-debug
-  
+#!/bin/bash
+build="build"
+rm -rf "$build"
+cmake -S . -B "$build"
+cmake --build "$build" --config Debug
 echo ""
 echo "-----------------------------"
 echo ""
-./cmake-build-debug/impl_cpp 
+./"$build"/impl_cpp

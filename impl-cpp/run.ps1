@@ -1,11 +1,14 @@
 
-Remove-Item  -Recurse -Force  cmake-build-debug
-mkdir cmake-build-debug
-cd cmake-build-debug
-cmake ..
-cmake --build . --config Debug
-echo "Running debug build..."
-echo "-----------------------------"
-echo ""
-.\impl_cpp.exe
-cd ..
+
+Remove-item -Recurse -Force "build"
+
+# Configure and build
+cmake -S . -B build
+cmake --build build --config Debug
+
+ Write-Output 'Running debug build...'
+ Write-Output '-----------------------------'
+ Write-Output ''
+.\build\Debug\impl_cpp.exe
+
+ 

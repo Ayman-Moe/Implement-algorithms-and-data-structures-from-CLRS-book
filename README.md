@@ -11,19 +11,18 @@ The goal is to provide clear, well-tested, and idiomatic implementations in **Ru
 ## Repository Layout
 
 **Top-level folders**
-
+---
 - **docs** — Notes, definitions, algorithm explanations, and references.  
+---
 - **impl-cpp** — C++ implementations and tests.
-  - **include** — Public headers.
-  - **test_func** — Unit tests and example programs.
-  - **cmake-build-debug** — Local build artifacts (ignored in VCS).
+---
 - **impl-rs** — Rust implementations and tests.
 
 ## Getting Started
 
 ### Prerequisites
 
-- **C++**: CMake (≥ 3.16), a C++17-compatible compiler (g++, clang, MSVC).  
+- **C++**: CMake (≥ 3.16), a C++17-compatible compiler (g++, clang or MSVC).  
 - **Rust**: Rust toolchain with `cargo` (stable).
 
 ### Build and run C++ implementation
@@ -48,3 +47,8 @@ The goal is to provide clear, well-tested, and idiomatic implementations in **Ru
  cargo test
  cd ..
  ```
+
+# Guide And Roadmap
+
+
+ 
