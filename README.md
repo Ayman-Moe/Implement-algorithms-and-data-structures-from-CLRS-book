@@ -19,7 +19,7 @@ The goal is to provide clear, well-tested, and idiomatic implementations in **Ru
   
   - [test_func/](./impl_cpp/test_func/) contain [algo/](./impl_cpp/test_func/algo) and [data-structure/](./impl_cpp/test_func/data_structure).
 
-  - [CMakeLists.txt](./impl_cpp/CMakeLists.txt) for cmakebuild tool.
+  - [CMakeLists.txt](./impl_cpp/CMakeLists.txt) for cmake build tool.
 
   - [run.ps1](./impl_cpp/run.ps1) for run Test unites in Windows platform.
 
@@ -27,7 +27,7 @@ The goal is to provide clear, well-tested, and idiomatic implementations in **Ru
 
 ---
 - **[impl_rs/](./impl_rs)** — Rust implementations 
-  - [src/](./impl_rs/src/) contain sourse code.
+  - [src/](./impl_rs/src/) contain source code.
 
   -  [algo/](./impl_rs/src/algo)  for algorithms implementations.
 
@@ -42,25 +42,25 @@ The goal is to provide clear, well-tested, and idiomatic implementations in **Ru
 - **C++**: CMake (≥ 3.16), Ninja-Build tool, a C++17-compatible compiler (g++, clang or MSVC).  
 - **Rust**: Rust toolchain with `cargo` (stable).
 
-### Build and run C++ implementation
+### Build and run C++ test unites
 
 * Create a build directory and run CMake:
   * For Windows **powershell**
     ```powershell
-        cd impl-cpp
+        cd impl_cpp
         .\run.ps1
         cd ..
     ```
   * For Linux
     ```bash
-        cd impl-cpp
+        cd impl_cpp
         ./run.sh
         cd ..
     ```
 
-### Build and run Rust implementation
+### Build and run Rust test unites
  ```bash
- cd impl-rs
+ cd impl_rs
  cargo test
  cd ..
  ```
