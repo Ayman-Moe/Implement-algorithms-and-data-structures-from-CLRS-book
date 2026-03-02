@@ -1,4 +1,4 @@
-# Implement Algorithms and Data Structures
+# Implement Algorithms and Data Structures and Take Notices
 
 **Languages:** Rust; C++  
 **Based on:** *Introduction to Algorithms* (CLRS), 4th edition
@@ -43,6 +43,8 @@ The goal is to provide clear, well-tested, and idiomatic implementations in **Ru
 - **Rust**: Rust toolchain with `cargo` (stable).
 
 ### Build and run C++ test unites
+
+**Note the powershell.exe or unix shell must opened in [main directory](.)**
 
 * Create a build directory and run CMake:
   * For Windows **powershell**
