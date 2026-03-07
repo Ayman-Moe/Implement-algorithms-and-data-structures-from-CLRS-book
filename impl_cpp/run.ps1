@@ -9,6 +9,6 @@ cmake --build build --config Debug
  Write-Output 'Running debug build...'
  Write-Output '-----------------------------'
  Write-Output ''
-.\build\Debug\impl_cpp.exe
+.\build\Debug\MyAlgorithms.exe
 
  

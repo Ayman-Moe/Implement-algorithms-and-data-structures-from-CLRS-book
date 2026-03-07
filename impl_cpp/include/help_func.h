@@ -5,44 +5,51 @@ using std::cout , std::string , std::size_t;
 
  // Contain help func to display massage about test's result  
  namespace Logger{
-        inline void greenMsg(const char* msg ,const char* line="\n"){
-        cout << "\033[32m" << msg << "\033[0m" << line ;
+      constexpr const char *greenColor = "\033[32m", 
+      *redColor =  "\033[31m",*blueColor = "\033[34m" , 
+      *orangeColor = "\033[38;5;208m" , *reset =  "\033[0m";
+
+        enum class  Color{
+        Green, Blue, Orange, Red, Default
+         };
+
+        static const char* getColor(const Color& color){
+            switch (color){
+                case Color::Green : return greenColor; break;
+                case Color::Red : return redColor; break;
+                case Color::Blue : return blueColor; break;
+                case Color::Orange : return orangeColor; break;
+                default : return reset;
+            }
         }
-        inline void redMsg(const char* msg ,const char* line="\n"){
-        cout << "\033[31m" << msg << "\033[0m" << line;
-        }
-        inline void blueMsg(const char* msg ,const char* line="\n"){
-        cout << "\033[34m" << msg << "\033[0m" << line;
-        }
-        template<class T> inline void greenMsg(T msg ,const char* line="\n"){
-        cout << "\033[32m" << msg << "\033[0m" << line ;
-        }
-        template<class T> inline void redMsg(T msg ,const char* line="\n"){
-        cout << "\033[31m" << msg << "\033[0m" << line;
-        }
-        template<class T> inline void blueMsg(T msg ,const char* line="\n"){
-        cout << "\033[34m" << msg << "\033[0m" << line;
-        }
+        template<class T> inline
+         static void coloredMsg( const Color& color, const T msg, 
+                          const char* beganSpace = "", const char* endSpace="",
+                          const char* line="\n"){
+                            cout << getColor(color) << beganSpace << msg  << endSpace << reset << line; 
+                            cout.flush();
+                         }
+
         //  Display massage for accept test case
         inline void accept( const char* acceptMsg) {
-           greenMsg(acceptMsg);
+           coloredMsg(Color::Green, acceptMsg);
         }
         //  Display massage for accept test case
         inline void error(const char* errMsg )  {
-            redMsg(errMsg);
+            coloredMsg(Color::Red, errMsg);
         }
         //  Display massage for accept test case
         inline void explain(const char* explMsg)  {
-            blueMsg(explMsg);
+            coloredMsg(Color::Orange, explMsg);
         }     
         template<class T> inline void displayCStyleArr(const char* arrName, const T* arr , size_t len){
-           blueMsg(arrName ,"") ; blueMsg(" [ ","");  
+          coloredMsg(Color::Blue, arrName, "", " : [" , "");
             for (size_t i =0 ; i < len -1 ; i++){
-                blueMsg(arr[i], " ," );
+                coloredMsg(Color::Blue, arr[i], " ", ", " , "");
             }
-            blueMsg(arr[len -1] ," ]\n");
+            coloredMsg(Color::Blue, arr[len -1], " ", " ]");
          }
- };
+ }; // Logger
 
  // Contain help func to compare the output of algorithms 
  // or data structure behave with expected output
